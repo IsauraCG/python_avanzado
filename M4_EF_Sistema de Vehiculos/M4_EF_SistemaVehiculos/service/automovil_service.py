@@ -1,5 +1,5 @@
 """ Automovil Service """
-from parte_1.modelo.automovil import Automovil
+from modelo.automovil import Automovil
 
 
 class AutomovilService:

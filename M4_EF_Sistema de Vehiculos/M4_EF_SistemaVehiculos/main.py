@@ -1,6 +1,6 @@
 """ Importaciones """
 # from modelo.automovil import Automovil
-from parte_1.service.automovil_service import AutomovilService
+from service.automovil_service import AutomovilService
 
 # Test funcion solicitar cantidad
 # cantidad = AutomovilService().solicitar_cantidad()

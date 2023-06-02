@@ -1,5 +1,5 @@
 """ Clase Automóvil, heredada de Vehículo """
-from parte_2.modelo.vehiculo import Vehiculo
+from modelo.vehiculo import Vehiculo
 
 
 class Automovil(Vehiculo):
