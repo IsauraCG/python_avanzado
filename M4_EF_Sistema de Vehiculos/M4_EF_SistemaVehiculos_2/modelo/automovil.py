@@ -39,5 +39,10 @@ class Automovil(Vehiculo):
         # return super().__str__()
         """ Método to String """
         string = (
-            f"Nuevo Automovil: marca={self._marca}, modelo={self._modelo}, numero_ruedas={self._numero_ruedas}, velocidad={self._velocidad}, cilindrada={self._cilindrada}")
+            "Nuevo Automovil: " + 
+            f"marca={self._marca}, " + 
+            f"modelo={self._modelo}, " + 
+            f"numero_ruedas={self._numero_ruedas}, " + 
+            f"velocidad={self._velocidad}, " + 
+            f"cilindrada={self._cilindrada}")
         return string

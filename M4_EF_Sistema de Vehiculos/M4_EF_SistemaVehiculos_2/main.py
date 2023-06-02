@@ -1,22 +1,8 @@
 """ Importaciones """
-# from modelo.automovil import Automovil
-from service.automovil_service import AutomovilService
+from modelo.paticular import Particular
 
-# Test funcion solicitar cantidad
-# cantidad = AutomovilService().solicitar_cantidad()
 
-# Test funcion solictar datos
-# datos = AutomovilService().solicitar_datos()
-
-# Test de función que imprime los datos de una lista de automoviles en un formato específico
-# AutomovilService.imprimir_lista_automoviles(AutomovilService)
-
-######################################
-
-# lista que contendrá los vehículos creados
-lista_autos = []
-# Función que solicita datos, crea un diccionario con el nuevo vehículo creado
-# luego lo añade a la lista recibida para retornar la lista
-automoviles = AutomovilService.crear_automoviles(AutomovilService, lista_autos)
-# Función que toma los datos de una lista de automoviles y los imprime en formato solicitados
-AutomovilService.imprimir_automoviles_dict(AutomovilService, automoviles)
+particular = Particular("Ford", "Fiesta", 4, "180", "500", 5) 
+carga = Carga("Daft Trucks", "G 38", 10, 120, "1000", "20000") 
+bicicleta = Bicicleta("Shimano", "MT Ranger", 2, "Carrera") 
+motocicleta = Motocicleta("BMW", "F800s",2,"Deportiva","2T","Doble Viga", 21)

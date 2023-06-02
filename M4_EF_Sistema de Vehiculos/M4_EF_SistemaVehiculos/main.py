@@ -12,7 +12,7 @@ from service.automovil_service import AutomovilService
 # AutomovilService.imprimir_lista_automoviles(AutomovilService)
 
 ######################################
-
+""" Programación que solicita datos e imprime los automoviles en el formato requerido """
 # lista que contendrá los vehículos creados
 lista_autos = []
 # Función que solicita datos, crea un diccionario con el nuevo vehículo creado
