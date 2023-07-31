@@ -12,12 +12,32 @@ class Profesor(MiembroDeEscuela):
         self._salario = salario
 
     @property
-    def nombre(self):
-        """ Getter Nombre Miembro"""
-        return self._nombre
+    def curso(self):
+        """ Getter curso Miembro"""
+        return self._curso
 
-    @nombre.setter
-    def nombre(self, nombre):
-        """ Setter Nombre Miembro """
-        self._nombre= nombre
-        
+    @curso.setter
+    def curso(self, curso):
+        """ Setter curso Miembro """
+        self._curso= curso
+
+    @property
+    def salario(self):
+        """ Getter salario Miembro"""
+        return self._salario
+
+    @salario.setter
+    def salario(self, salario):
+        """ Setter salario Miembro """
+        self._salario= salario
+
+    def curso_impartiendo(self):
+        """ Función cuaro impartiendo
+        """
+        print(f"Impartiendo el curso: {self.curso} ")
+
+    def salario_anual(self):
+        """Método salario anual
+        """
+        salario_mensual = int(self.salario)
+        print(f"Salario Anual: {salario_mensual*12}")
