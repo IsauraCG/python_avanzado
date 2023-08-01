@@ -48,3 +48,42 @@ class Animal(object):
     def peso(self, peso):
         """ Setter peso Miembro """
         self._peso= peso
+
+    # Métodos:  comer, caminar, dormir
+
+    def comer(self, cant_comida):
+        """ Método: comer del OBJ animal 
+        cant_comida : expresada en gramos """
+        print (f"{self._nombre} ha comido {cant_comida} gramos de comida")
+        # convierte en gramos el peso, y le suma cant_comida
+        self._peso = (self._peso * 1000) + cant_comida
+        # reconvierte a kilogramos
+        self._peso = self._peso / 1000
+        #imprime mensaje en consola
+        print (f"El nuevo peso de {self._nombre} es: {self._peso} kgs.")
+
+    def caminar(self, cant_pasos):
+        """ Método: caminar del OBJ animal """
+        # 257.143 pasos == 1000 grs
+        # 1 paso == 0,0039 grs
+
+        #cálculo de correspondencia del peso perdido, según cantidad de pasos ingresada
+        peso_perdido = int(cant_pasos * 0.0039)
+        # actualizar valor del peso, segun peso perdido
+        self._peso = float(((self._peso * 1000) - peso_perdido)/1000)
+        #imprime mensaje en consola
+        print (f"{self._nombre} ha caminado {cant_pasos} pasos."+
+            f"\nHa perdido {peso_perdido} grs. \nSu nuevo peso es de: {self._peso} kgs")
+
+    def dormir(self, tiempo):
+        """ Método: dormir del OBJ animal """
+        print(f"{self._nombre} está cansado :( \nSe irá dormir.")
+        print("Durmiendo ......")
+        i = 0
+        while i >= 0:
+            if i < tiempo:
+                i += 1
+                print(f" {i} zzzZZzzz ")
+            if i == tiempo:
+                print(f"{self._nombre} ya está descansado :)")
+                break

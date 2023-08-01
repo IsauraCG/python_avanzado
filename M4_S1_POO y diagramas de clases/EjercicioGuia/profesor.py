@@ -32,12 +32,10 @@ class Profesor(MiembroDeEscuela):
         self._salario= salario
 
     def curso_impartiendo(self):
-        """ Función cuaro impartiendo
-        """
+        """ Función cuaro impartiendo """
         print(f"Impartiendo el curso: {self.curso} ")
 
     def salario_anual(self):
-        """Método salario anual
-        """
+        """ Método salario anual """
         salario_mensual = int(self.salario)
         print(f"Salario Anual: {salario_mensual*12}")
