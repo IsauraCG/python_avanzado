@@ -1,7 +1,5 @@
 """ SUPERCLASE MIEMBRO DE ESCUELA """
 from datetime import datetime
-from datetime import date
-
 
 class MiembroDeEscuela(object):
     """ Clase MIEMBRO DE ESCUELA """
@@ -63,33 +61,19 @@ class MiembroDeEscuela(object):
         """ Setter peso Miembro """
         self._peso= peso
 
-""" Métodos """
+    def edad (self):
+        """ Calcula edad
+        """
+        anio_actual = int(datetime.today().year)
+        anio_nacimiento = int(self.fecha_nacimiento.year)
+        miembro_edad = anio_actual - anio_nacimiento
+        print (f"{miembro_edad}")
 
-def edad (self):
-    anio_actual = int(datetime.today().year)
-    anio_nacimiento = int(self.fecha_nacimiento.year)
-    miembro_edad = anio_actual - anio_nacimiento
-    print (f"{miembro_edad}")
-
-def imprimir_genero (self):
-    if self.sexo == "F" :
-        print("Femenino")
-    elif self.sexo == "M" :
-        print("Masculino")
-    else : print("ERROR")
-
-    """
-    /// Genera un nuevo OBJ tipo miembro, llamado miembro1
-    miembro1 = MiembroDeEscuela("Pedro","Cáceres", date(2001,3,20), "F", 45.8)
-    
-    /// Imprime los valores de los parámetros del OBJ miembro 1
-    print(f"{miembro1._nombre, miembro1._apellido,str(miembro1._fecha_nacimiento),miembro1._sexo, miembro1._peso}")
-    
-    /// ejecuta el método edad que calcula e imprime la edad de OBJ miembro 1
-    edad(miembro1)
-    
-    /// ejecuta el método imprimir género 'Femenino' o ' Masculino' según corresponda,
-    según el valor del parámetro sexo del OBJ miembro1
-    
-    imprimir_genero(miembro1)
-    """
+    def imprimir_genero (self):
+        """ Imprime texto según sexo
+        """
+        if self.sexo == "F" :
+            print("Femenino")
+        elif self.sexo == "M" :
+            print("Masculino")
+        else : print("ERROR")

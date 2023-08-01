@@ -45,8 +45,9 @@ class Estudiante(MiembroDeEscuela):
     def pago_matricula(self):
         """ Método para pago de matrícula
         """
-        pago = input(int("Ingrese monto a pagar: "))
-        if pago == self.monto:
+        pago = input(f"Su matricula es de: {self._monto}. Ingrese monto a pagar: ")
+        pago = int(pago)
+        if pago == self._monto:
             print("MATRICULA PAGADA")
         else:
             print("Monto ingresado no coincide con el valor de la matrícula"+
