@@ -1,6 +1,6 @@
 """ Automovil Service """
+import csv
 from modelo.automovil import Automovil
-
 
 class AutomovilService:
     """ Clase Automovil Service """
@@ -104,3 +104,62 @@ class AutomovilService:
                   f"Cilindrada {auto.cilindrada} cc."
                   )
         print("\n")
+
+def guardar(nombre_archivo, Automovil):
+    """Método ejemplo que guarda los adatos de un solo elemento en un archivo.csv
+
+    Args:
+        nombre_archivo (string): nombre del archivo csv formato 'archivo.csv'
+        Automovil (tupla)
+    """
+    archivo = open(nombre_archivo, "w")
+    datos = [(Automovil.__class__, Automovil.__dict__)]
+    archivo_csv = csv.writer(archivo)
+    archivo_csv.writerows(datos)
+    archivo.close()
+
+def recuperar(nombre_archivo):
+    """Método ejemplo recuperar los datos de un archivo.csv para imprmirlos
+
+    Args:
+        nombre_archivo 
+
+    Returns:
+        impresión de valores del diccionario recuperado a aprtir d elos datos del csv.
+    """
+    vehiculos = []
+    archivo = open(nombre_archivo, "r")
+    archivo_csv = csv.reader(archivo)
+    for vehiculo in archivo_csv:
+        vehiculos.append(vehiculo)
+    archivo.close()
+    return print(vehiculos)
+
+def guardar_datos_csv(vehiculos, nombre_archivo):
+    """Metodo que recibe un grupo de elementos tipo diccionario y el nombre de un archivo tipo csv
+    para agregarlos a un archivo tipo csv.
+
+    Args:
+        vehiculos (diccionario): diccionario de elementos
+        nombre_archivo (string): nombre del archivo formato 'nombre.csv'
+    """
+    archivo = open(nombre_archivo, "w")
+    for v in vehiculos:
+        datos = [(v.__class__, v.__dict__)]
+        archivo_csv = csv.writer(archivo)
+        archivo_csv.writerows(datos)
+    archivo.close()
+
+def imprimir_csv(nombre_archivo):
+    """Imprime los datos en el archivo csv especificado
+    Args:
+        nombre_archivo (string): nombre del archivo csv a leer
+    Returns:
+        vehiculos: impresión de los valores del csv """
+    vehiculos = []
+    archivo = open(nombre_archivo, "r")
+    archivo_csv = csv.reader(archivo)
+    for vehiculo in archivo_csv:
+        vehiculos.append(vehiculo)
+    archivo.close()
+    return print(format(vehiculos))
